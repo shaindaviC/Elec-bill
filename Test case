@@ -1,0 +1,41 @@
+Electricity Billing System - Testcases
+Testcase 1:
+Input:
+C001, Units: 120, Type: 1 (Domestic)
+Expected:
+Base = 120 * 1.5 = 180
+Surcharge = 3% = 5.40
+Penalty = 0
+Discount = 0
+Final = 185.40
+Testcase 2:
+Input:
+C002, Units: 560, Type: 2 (Commercial)
+Expected:
+Base = (0-200)*5 + (201-500)*6.5 + 60*8 = 1000 + 1945 + 480 = 3425
+Surcharge = 3% = 102.75
+Penalty = 200
+Total = 3727.75
+Discount = 5% = 186.3875
+Final = 3541.36
+Testcase 3:
+Input:
+C003, Units: 80, Type: 1 (Domestic)
+Expected:
+Base = 80 * 1.5 = 120
+Surcharge = 3% = 3.6
+Final = 123.6
+Testcase 4:
+Input:
+C004, Units: 250, Type: 2 (Commercial)
+Expected:
+Base = 200*5 + 50*6.5 = 1000 + 325 = 1325
+Surcharge = 3% = 39.75
+Final = 1364.75
+Testcase 5:
+Input:
+C005, Units: 310, Type: 1 (Domestic)
+Expected:
+Base = 100*1.5 + 200*2.5 + 10*4 = 150 + 500 + 40 = 690
+Surcharge = 3% = 20.7
+Final = 710.
