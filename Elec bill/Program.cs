@@ -7,7 +7,6 @@ class EnergyTechBilling
         Console.Write("Enter number of consumers: ");
         int N = int.Parse(Console.ReadLine());
 
-        
         double totalRevenue = 0;
         double highestBill = 0;
         string highestBillConsumerID = "";
@@ -32,10 +31,9 @@ class EnergyTechBilling
             if (type == 1) domesticCount++;
             else commercialCount++;
 
-           
             double baseCharge = 0;
 
-            if (type == 1)  
+            if (type == 1)
             {
                 if (units <= 100)
                     baseCharge = units * 1.50;
@@ -44,7 +42,7 @@ class EnergyTechBilling
                 else
                     baseCharge = units * 4.00;
             }
-            else  
+            else
             {
                 if (units <= 200)
                     baseCharge = units * 5.00;
@@ -54,17 +52,10 @@ class EnergyTechBilling
                     baseCharge = units * 8.00;
             }
 
-           
             double surcharge = baseCharge * 0.03;
-
-          
             double penalty = units > 500 ? 200 : 0;
-
             double total = baseCharge + surcharge + penalty;
-
-           
             double discount = total > 2000 ? total * 0.05 : 0;
-
             double finalBill = total - discount;
 
             if (finalBill > highestBill)
@@ -75,19 +66,19 @@ class EnergyTechBilling
 
             totalRevenue += finalBill;
 
-            Console.WriteLine($"\n{consumerID} {typeName} Units:{units}");
-            Console.WriteLine($"BaseCharge: ₹{baseCharge:F2}");
-            Console.WriteLine($"Surcharge (3%): ₹{surcharge:F2}");
-            Console.WriteLine($"Penalty: ₹{penalty:F2}");
-            Console.WriteLine($"Discount: ₹{discount:F2}");
-            Console.WriteLine($"Final Bill: ₹{finalBill:F2}");
+            Console.WriteLine("\n" + consumerID + " " + typeName + " Units:" + units);
+            Console.WriteLine("BaseCharge: ₹" + baseCharge.ToString("F2"));
+            Console.WriteLine("Surcharge (3%): ₹" + surcharge.ToString("F2"));
+            Console.WriteLine("Penalty: ₹" + penalty.ToString("F2"));
+            Console.WriteLine("Discount: ₹" + discount.ToString("F2"));
+            Console.WriteLine("Final Bill: ₹" + finalBill.ToString("F2"));
         }
 
-      
         Console.WriteLine("\n--- Summary ---");
-        Console.WriteLine($"Total Consumers: {N}");
-        Console.WriteLine($"Total Revenue: ₹{totalRevenue:F2}");
-        Console.WriteLine($"Highest Bill: {highestBillConsumerID} ₹{highestBill:F2}");
-        Console.WriteLine($"Domestic: {domesticCount}   Commercial: {commercialCount}");
+        Console.WriteLine("Total Consumers: " + N);
+        Console.WriteLine("Total Revenue: ₹" + totalRevenue.ToString("F2"));
+        Console.WriteLine("Highest Bill: " + highestBillConsumerID + " ₹" + highestBill.ToString("F2"));
+        Console.WriteLine("Domestic: " + domesticCount + "   Commercial: " + commercialCount);
     }
 }
+
